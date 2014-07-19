@@ -13,10 +13,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.name %></td>
+        <td><%= link_to post.name, post %></td>
         <td><%= post.description %></td>
         <td><%= image_tag(post.picture_url, :width => 100) if post.picture.present? %></td>
-        <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
